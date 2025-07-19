@@ -1,0 +1,77 @@
+.tabs-container {
+  max-width: 1000px;
+  margin: 80px auto;
+  font-family: sans-serif;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #f3f4f6;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.tab-button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: transparent; /*to have the same color as header*/
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.tab-button.active {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.tab-content-area {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.company-icon img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tab-content h3,
+.tab-content ul,
+.tab-content p {
+  margin: 0;
+}
+
+.content-role,
+.content-period {
+  color: #757c87;
+  font-size: 0.9rem;
+}
+
+.tab-content {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tab-content ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.tab-content li {
+  margin-bottom: 0.5rem;
+}
