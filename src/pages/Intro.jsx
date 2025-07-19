@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "/src/intro.css";
+import "../intro.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
@@ -55,7 +55,7 @@ function Intro() {
           </div>
 
           <div className="right-image">
-            <img src="/images/img-logo.png" alt="my picture" />
+            <img src="./images/img-logo.png" alt="my picture" />
           </div>
         </div>
       </div>
