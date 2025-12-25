@@ -1,39 +1,59 @@
-import { useState } from "react";
 import "../intro.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Tab from "../components/Tabs";
+import heroImg from "/images/img-logo.png";
 
 function Intro() {
+  const cvUrl = `${import.meta.env.BASE_URL}CV-LaraMihelin.pdf`;
+
+  const getAge = () => {
+    const birthDate = new Date(2002, 10, 7);
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    const hasHadBirthdayThisYear =
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() &&
+        today.getDate() >= birthDate.getDate());
+
+    if (!hasHadBirthdayThisYear) {
+      age--;
+    }
+
+    return age;
+  };
+
   return (
     <>
       <div className="main">
         <div className="content">
           <div className="left-text">
             <h1>hello, name is lara.&nbsp;👋</h1>
-            <h3>22yo data analyst from Croatia</h3>
+            <h3>
+              {getAge()}-year-old data analyst from Croatia, based in Aachen.
+            </h3>
+
             <div className="job-description">
               <p>
-                Data Analyst @ FOREO. <br />
-                Web development is my side hussle.
+                I turn data into clear insights and build web projects in my
+                free time.
               </p>
             </div>
-            <h3>Get to know me better:</h3>
-            <div className="links">
-              <button className="resume-button">
-                <div>
-                  <FontAwesomeIcon icon={faCloudArrowDown} />
-                </div>
+            <div className="cta-section">
+              <p className="cta-title">Get to know me better:</p>
+
+              <div className="links">
                 <a
-                  href="/Lara Mihelin CV (1).pdf"
+                  className="resume-button"
+                  href={cvUrl}
                   download="Lara_Mihelin_CV.pdf"
                 >
+                  <FontAwesomeIcon icon={faCloudArrowDown} />
                   Resume
                 </a>
-              </button>
-              <div className="LinkedIn">
+
                 <a
                   href="https://www.linkedin.com/in/lara-mihelin-986371260/"
                   target="_blank"
@@ -41,24 +61,24 @@ function Intro() {
                 >
                   LinkedIn
                 </a>
-              </div>
-              <div className="Github">
+
                 <a
                   href="https://github.com/mihelin105"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Github
+                  GitHub
                 </a>
               </div>
             </div>
           </div>
 
           <div className="right-image">
-            <img src="./images/img-logo.png" alt="my picture" />
+            <img src={heroImg} alt="Lara" />
           </div>
         </div>
       </div>
+
       <Tab />
     </>
   );
